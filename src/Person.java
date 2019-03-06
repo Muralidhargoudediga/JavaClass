@@ -62,9 +62,24 @@ class TestSLInheritence {
 		student.setName("Kanta");
 		student.setAge(28);
 		student.setAddr("Delhi");
-		student.setSno(1234);
-		student.setCourse("MPC");
-		student.output();
+		((Student)student).setSno(1234);
+		((Student)student).setCourse("MPC");
+		//((Student)student).output();
+		
+		printDetails(student);
+		
+		Employee e = new Employee();
+		e.setName("Pavan");
+		e.setAge(35);
+		e.setAddr("Kurnool");
+		
+		printDetails(e);
+	}
+	
+	public static void printDetails(Person p){
+		System.out.println("Name : "+p.getName());
+		System.out.println("Age : "+p.getAge());
+		System.out.println("Address : "+p.getAddr());
 	}
 }
 
