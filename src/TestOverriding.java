@@ -1,12 +1,16 @@
 class Cat {
-	void sound(){
+	static void sound(){
 		System.out.println("MEOW");
 	}
 }
 
 class Tiger extends Cat {
-	void sound(){
+	static void sound(){
 		System.out.println("Roar");
+	}
+	
+	void show() {
+		System.out.println("test");
 	}
 }
 
@@ -15,6 +19,8 @@ class TestOverrinding {
 		Cat c = new Cat();
 		printSound(c);
 		c = new Tiger();
+		((Tiger)c).show();
+		Tiger t = (Tiger)c;
 		printSound(c);
 	}
 	
